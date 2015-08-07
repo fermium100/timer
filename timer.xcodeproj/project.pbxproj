@@ -13,6 +13,8 @@
 		CE787F601B750BD2007903B5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE787F5F1B750BD2007903B5 /* Images.xcassets */; };
 		CE787F631B750BD2007903B5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE787F611B750BD2007903B5 /* LaunchScreen.xib */; };
 		CE787F6F1B750BD2007903B5 /* timerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE787F6E1B750BD2007903B5 /* timerTests.swift */; };
+		CE787F7A1B7510A2007903B5 /* black.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE787F781B7510A2007903B5 /* black.jpg */; };
+		CE787F7B1B7510A2007903B5 /* white.png in Resources */ = {isa = PBXBuildFile; fileRef = CE787F791B7510A2007903B5 /* white.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		CE787F681B750BD2007903B5 /* timerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = timerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE787F6D1B750BD2007903B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE787F6E1B750BD2007903B5 /* timerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timerTests.swift; sourceTree = "<group>"; };
+		CE787F781B7510A2007903B5 /* black.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = black.jpg; sourceTree = "<group>"; };
+		CE787F791B7510A2007903B5 /* white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = white.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,8 @@
 		CE787F551B750BD2007903B5 /* timer */ = {
 			isa = PBXGroup;
 			children = (
+				CE787F781B7510A2007903B5 /* black.jpg */,
+				CE787F791B7510A2007903B5 /* white.png */,
 				CE787F581B750BD2007903B5 /* AppDelegate.swift */,
 				CE787F5A1B750BD2007903B5 /* ViewController.swift */,
 				CE787F5C1B750BD2007903B5 /* Main.storyboard */,
@@ -192,7 +198,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE787F7B1B7510A2007903B5 /* white.png in Resources */,
 				CE787F5E1B750BD2007903B5 /* Main.storyboard in Resources */,
+				CE787F7A1B7510A2007903B5 /* black.jpg in Resources */,
 				CE787F631B750BD2007903B5 /* LaunchScreen.xib in Resources */,
 				CE787F601B750BD2007903B5 /* Images.xcassets in Resources */,
 			);

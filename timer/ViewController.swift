@@ -10,10 +10,66 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    //タイマー
+    var timer: NSTimer!
+    var cnt: Float = 0
+    @IBOutlet var label : UILabel!
+    @IBOutlet var bg : UIImageView!
+    var black : UIImage!
+    var white : UIImage!
+    var ope : Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        black = UIImage(named: "black.jpg")
+        white = UIImage(named: "white.png")
     }
+    
+    @IBAction func timerBtn(sender: UIButton) {
+        
+        cnt = 0
+        ope = ope + 1
+        //タイマーを作る.
+        timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "onUpdate:", userInfo: nil, repeats: true)
+        println(ope)
+        
+        /*if ope/2 % 2 == 0{
+            bg.image = black
+            
+        }
+        if ope/2 % 2 == 1{
+            bg.image = white
+            
+        }*/
+        
+    }
+    @IBAction func timerstop(sender: UIButton) {
+        cnt = 0
+        ope = ope + 1
+        
+        if ope % 2 == 0{
+            bg.image = black
+            
+        }
+        if ope % 2 == 1{
+            bg.image = white
+            
+        }
+        
+    }
+    
+    func onUpdate(timer : NSTimer){
+        cnt += 0.1
+        label.text = String(stringInterpolationSegment: cnt)
+        if cnt > 10.0 {
+            if timer.valid  {
+                //timerを停止する.
+                timer.invalidate()
+                label.text = String("Gameover")
+            }
+        }
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
