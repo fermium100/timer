@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     var black : UIImage!
     var white : UIImage!
     var ope : Int = 0
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         black = UIImage(named: "black.jpg")
@@ -33,14 +33,12 @@ class ViewController: UIViewController {
         timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "onUpdate:", userInfo: nil, repeats: true)
         println(ope)
         
-        /*if ope/2 % 2 == 0{
+        if ope % 2 == 0{
             bg.image = black
-            
         }
-        if ope/2 % 2 == 1{
+        if ope % 2 == 1{
             bg.image = white
-            
-        }*/
+        }
         
     }
     @IBAction func timerstop(sender: UIButton) {
@@ -49,18 +47,16 @@ class ViewController: UIViewController {
         
         if ope % 2 == 0{
             bg.image = black
-            
         }
         if ope % 2 == 1{
             bg.image = white
-            
         }
         
     }
     
     func onUpdate(timer : NSTimer){
         cnt += 0.1
-        label.text = String(stringInterpolationSegment: cnt)
+		label.text = String(format: "%.1f", cnt)
         if cnt > 10.0 {
             if timer.valid  {
                 //timerを停止する.
