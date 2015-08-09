@@ -19,23 +19,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1mu-9g-gsN">
                                 <rect key="frame" x="-16" y="-21" width="406" height="688"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ewi-Xk-Gbw">
-                                <rect key="frame" x="133" y="100" width="109" height="58"/>
-                                <color key="backgroundColor" red="0.86329386679999998" green="1" blue="0.74669730670000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QHx-9h-R5X">
-                                <rect key="frame" x="0.0" y="178" width="382" height="320"/>
-                                <color key="backgroundColor" red="0.67795666229999996" green="0.9392951933" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Change">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="timerstop:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="3cW-42-EGn"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d57-Z9-F5K">
                                 <rect key="frame" x="149" y="528" width="76" height="66"/>
                                 <color key="backgroundColor" red="0.98140664420000001" green="1" blue="0.43962814090000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -46,6 +29,30 @@
                                     <action selector="timerBtn:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="iPv-Lu-CPU"/>
                                 </connections>
                             </button>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="buN-s8-lLE">
+                                <rect key="frame" x="140" y="33" width="94" height="29"/>
+                                <connections>
+                                    <action selector="setTimeOut:" destination="vXZ-lx-hvc" eventType="valueChanged" id="cGT-3s-a9t"/>
+                                    <action selector="stepperValueChanged:" destination="vXZ-lx-hvc" eventType="valueChanged" id="fJ0-sh-JkK"/>
+                                </connections>
+                            </stepper>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ewi-Xk-Gbw">
+                                <rect key="frame" x="133" y="100" width="109" height="58"/>
+                                <color key="backgroundColor" red="0.86329386679999998" green="1" blue="0.74669730670000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QHx-9h-R5X">
+                                <rect key="frame" x="-4" y="174" width="382" height="320"/>
+                                <color key="backgroundColor" red="0.67795666229999996" green="0.9392951933" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Change">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="timerstop:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="3cW-42-EGn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -53,6 +60,7 @@
                     <connections>
                         <outlet property="bg" destination="1mu-9g-gsN" id="ika-rC-xKg"/>
                         <outlet property="label" destination="ewi-Xk-Gbw" id="n5H-mY-ez8"/>
+                        <outlet property="setTimeOut" destination="buN-s8-lLE" id="Ux1-cL-WKJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

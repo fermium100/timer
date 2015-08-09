@@ -15,16 +15,24 @@ class ViewController: UIViewController {
     var cnt: Float = 0
     @IBOutlet var label : UILabel!
     @IBOutlet var bg : UIImageView!
+    @IBOutlet weak var setTimeOut: UIStepper!
     var black : UIImage!
     var white : UIImage!
     var ope : Int = 0
+    var timeOut : Float = 10.0
 
     override func viewDidLoad() {
         super.viewDidLoad()
         black = UIImage(named: "black.jpg")
         white = UIImage(named: "white.png")
+        label.text = timeOut.description
     }
+  
     
+  @IBAction func stepperValueChanged(sender: UIStepper) {
+        timeOut = max(1,Float(sender.value))
+        label.text = timeOut.description
+  }
     @IBAction func timerBtn(sender: UIButton) {
         
         cnt = 0
@@ -57,7 +65,7 @@ class ViewController: UIViewController {
     func onUpdate(timer : NSTimer){
         cnt += 0.1
 		label.text = String(format: "%.1f", cnt)
-        if cnt > 10.0 {
+        if cnt > timeOut {
             if timer.valid  {
                 //timerを停止する.
                 timer.invalidate()
